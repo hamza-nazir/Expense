@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">StockMaster</div>
+        <div id="items">
+            <button>Help</button>
+        </div>
+    </nav>
+
+    <div id="section">
+        <!-- Sidebar -->
+        <aside id="secOne">
+            <ul>
+                <li><a href="/">Home</a></li> 
+                <li><a href="/dashboard" class="active">Dashboard</a></li>
+                <li><a href="/products">Add Product</a></li>
+                <li><a href="/budget">Budget</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/activity">Activity</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="secTwo">
+            <div id="opt">
+                <h1 id="e" class="page-header">Dashboard</h1>
+                <select name="category" id="product">
+                    <option value="">Select category</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Groceries">Groceries</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="all">All</option>
+                </select> 
+            </div>
+
+            <table class="product-table">
+                <thead>
+                    <tr id="head">
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Code</th>
+                        <th>Price</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let data of productData) { %>
+                    <tr>
+                        <td><%= data.name %></td>
+                        <td><%= data.category %></td>
+                        <td><%= data.code %></td>
+                        <td>$<%= data.price %></td>
+                        <td>
+                            <div class="button-group">
+                                <form action="/products/<%= data.code %>">
+                                    <button class="action-btn">View Details</button>
+                                </form>
+                                <form method="post">
+                                    <button formaction="/dashboard/<%= data.code %>" class="action-btn">Delete</button>
+                                </form>
+                                <form method="post">
+                                    <button formaction="/edit/<%= data.code %>" class="action-btn">Edit</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <br>
+            <div class="btnn">
+                <button id="btnid"><a href="/products">Add Product</a></button>
+            </div>
+        </main>
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

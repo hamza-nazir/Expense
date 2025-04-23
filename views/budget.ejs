@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Budget</title>
+    <link rel="stylesheet" href="/css/budget.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">StockMaster</div>
+        <div id="items">
+            <button>Help</button>
+        </div>
+    </nav>
+
+    <div id="section">
+        <!-- Sidebar -->
+        <aside id="secOne">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/products">Add Product</a></li>
+                <li><a href="/budget" class="active">Budget</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/activity">Activity</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="secTwo">
+            <h1 class="page-header">Budget Overview</h1>
+           
+            <form method="post" id="budget-form">
+                <label for="monthlyBudget">Set Monthly Budget:</label>
+                <input name="price" type="number" id="monthlyBudget" placeholder="Enter amount in PKR" required>
+                <br>
+                <button formaction="/budget" type="submit">Set as New</button>
+                <button formaction="/budgets">Save in Current</button>
+</form>
+           
+
+            <div class="budget-summary">
+                <h2>Budget Summary</h2>
+                <p><strong>Set Budget:</strong>$<%= totalBudget %> </p>
+                <p><strong>Total Spent:</strong>$<%= totalExp %> </p>
+                <p><strong>Remaining:</strong> $<%=totalBudget-totalExp%> </p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

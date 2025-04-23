@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Product Details</title>
+    <link rel="stylesheet" href="/css/detail.css">
+    
+</head>
+<body>
+    <nav >
+        <div class="logo">StockMaster</div>
+        <div id="items">
+            <input type="text" name="search" id="search" placeholder="Search Products" />
+            <button>Help</button>
+        </div>
+    </nav>
+
+    <div id="section">
+        <section id="secOne">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/products">Add Product</a></li>
+                <li><a href="/budget">Budget</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/activity">Activity</a></li>
+            </ul>
+        </section>
+
+        <section id="secTwo">
+            <h1 class="page-header">Product Details</h1>
+            
+            <div class="product-detail-card">
+                <div class="product-header">
+                    <h2><%= correctData.name %></h2>
+                    <span class="product-category"><%= correctData.category %></span>
+                </div>
+                
+                <div class="product-details-grid">
+                    <div class="detail-item">
+                        <span>Product Code:</span>
+                        <strong><%= correctData.code %></strong>
+                    </div>
+                    <div class="detail-item">
+                        <span>Price:</span>
+                        <strong>$<%= correctData.price.toFixed(2) %></strong>
+                    </div>
+                    <div class="detail-item">
+                        <span>Quantity in Stock:</span>
+                        <strong><%= correctData.quantity %></strong>
+                    </div>
+                    <div class="detail-item">
+                        <span>Supplier:</span>
+                        <strong><%= correctData.supplier %></strong>
+                    </div>
+                    <div class="detail-item full-width">
+                        <span>Description:</span>
+                        <p><%= correctData.description %></p>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="" class="btn primary">Edit Product</a>
+                    <a href="/dashboard" class="btn secondary">Back to Dashboard</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  background-color: #1e293b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  align-items: center;
+  height: 64px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+.btnn{
+
+  display: flex;
+  justify-content: center;
+}
+/* Layout */
+#section {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px);
+}
+
+/* Sidebar */
+#secOne {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+#secOne ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+#secOne a {
+  color: #475569;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: block;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#secOne a:hover {
+  color: #1B263B;
+  background-color: #f1f5f9;
+}
+
+#secOne a.active {
+  color: #1B263B;
+  background-color: #eff6ff;
+}
+
+/* Main Section */
+#secTwo {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8fafc;
+  overflow-x: auto;
+}
+
+.page-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Table Styling */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  min-width: 600px; /* Ensures table doesn't get too narrow */
+}
+
+.product-table th, .product-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.product-table th {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.product-table td {
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.product-table tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Button */
+button {
+  padding: 6px 12px;
+  background-color: #1B263B;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.85rem;
+}
+
+button:hover {
+  background-color: #1B263B;
+}
+
+#e {
+  color: white;
+}
+
+#opt {
+  background-color: #1B263B;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+#btnid a{
+  color: white;
+}
+#product {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  width: 100%;
+  max-width: 250px;
+}
+
+#btn {
+  width: 100%;
+  max-width: 108px;
+}
+/* Add these styles to your existing dashboard.css */
+
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  background-color: #1B263B;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  min-width: 80px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.action-btn:hover {
+  background-color: #1B263B;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button-group {
+      flex-direction: column;
+      gap: 6px;
+  }
+  
+  .action-btn {
+      width: 100%;
+  }
+}
+
+/* Keep your existing styles below */
+/* Responsive Design */
+@media (min-width: 768px) {
+  #section {
+      flex-direction: row;
+  }
+  
+  #secOne {
+      width: 240px;
+      padding: 24px 16px;
+      border-right: 1px solid #e2e8f0;
+      border-bottom: none;
+      height: calc(100vh - 64px);
+      position: sticky;
+      top: 64px;
+  }
+  
+  #secOne ul {
+      flex-direction: column;
+      gap: 12px;
+  }
+  
+  #secOne a {
+      font-size: 1rem;
+      padding: 10px 12px;
+  }
+  
+  #secTwo {
+      padding: 32px;
+  }
+  
+  .page-header {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+  }
+  
+  #opt {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .product-table th, .product-table td {
+      padding: 14px 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #secOne {
+      width: 280px;
+  }
+  
+  #secTwo {
+      padding: 40px;
+  }
+}

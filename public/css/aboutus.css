@@ -1,0 +1,35 @@
+/* Reuse dashboard.css structure and styles */
+@import url('dashboard.css'); /* Optional if styles are shared */
+
+.about-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  line-height: 1.7;
+  color: #334155;
+}
+
+.about-container h2 {
+  margin-top: 1.5rem;
+  color: #1e293b;
+}
+
+.about-container a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.about-container a:hover {
+  text-decoration: underline;
+}
+
+.team-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.team-list li {
+  margin-bottom: 0.5rem;
+}

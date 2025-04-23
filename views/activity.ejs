@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StockMaster - Activity</title>
+  <link rel="stylesheet" href="/css/activity.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="dashboard-nav">
+    <div class="nav-container">
+      <div class="logo">StockMaster</div>
+      <button class="help-btn">Help</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/products">Add Product</a></li>
+        <li><a href="/budget">Budget</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+        <li><a href="/activity" class="active">Activity</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-header">
+        <h1>Activity Logs</h1>
+        <p class="breadcrumb">Home / Activity</p>
+      </div>
+
+      <div class="activity-container">
+        <ul class="activity-log">
+          <li class="log-item log-add">Product Mobile added with price of 1200$ — 4/22/2025, 1:26:38 AM</li>
+          <li class="log-item log-edit">Product T-Shirt edited with price of 1500$ — 4/22/2025, 1:26:39 AM</li>
+          <% for (data of activityArr) { %>
+            <% if (data.add) { %>
+              <li class="log-item log-add"><%= data.add %> — <%= data.date %></li>
+            <% } else if(data.edit){%>
+              <li class="log-item log-edit"><%= data.edit %> — <%= data.date %></li>
+            <%}else{%>
+              <li class="log-item log-remove"><%= data.remove %> — <%= data.date %></li>
+            <% } %>
+          <% }%>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

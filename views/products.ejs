@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockMaster - Add Product</title>
+  <link rel="stylesheet" href="/css/product.css">
+ 
+</head>
+<body>
+  <nav>
+    <div class="logo">StockMaster</div>
+    <div id="items">
+
+      <button>Help</button>
+    </div>
+  </nav>
+
+  <div id="section">
+    <section id="secOne">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/products" class="active">Add Product</a></li>
+        <li><a href="/budget">Budget</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+        <li><a href="/activity">Activity</a></li>
+      </ul>
+    </section>
+
+<form action="/products" method="post">
+ <section id="secTwo">
+      <h1 class="page-header">Add New Product</h1>
+      
+      <div class="form-container">
+        <form class="form-grid">
+          <div class="form-group">
+            <label for="product-name">Product Name</label>
+            <input name="name" type="text" id="product-name" required placeholder="Enter product name">
+          </div>
+          
+          <div class="form-group">
+            <label for="product-sku">SKU Code</label>
+            <input name="code" type="text" id="product-sku" required placeholder="Enter SKU">
+          </div>
+          
+          <div class="form-group">
+            <label for="product-category">Category</label>
+            <select name="category" id="product-category" >
+              <option value="">Select category</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="product-price">Price ($)</label>
+            <input name="price" type="number" id="product-price" step="0.01" required placeholder="0.00">
+          </div>
+          
+          <div class="form-group">
+            <label for="product-quantity">Quantity in Stock</label>
+            <input name="quantity" type="number" id="product-quantity" required placeholder="0">
+          </div>
+          
+          <div class="form-group">
+            <label for="product-supplier">Supplier</label>
+            <input name="supplier" type="text" id="product-supplier" placeholder="Enter supplier name">
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="product-description">Description</label>
+            <textarea name="description" id="product-description" placeholder="Enter product description"></textarea>
+          </div>
+          
+          
+          
+          <div class="form-actions">
+
+            <button id="btn" type="submit" class="btn-primary">Add Product</button>
+
+          </div> 
+          
+      </div>
+    </section>
+   
+  </form>
+ 
+  </div>
+  
+</body>
+</html>
+
+
